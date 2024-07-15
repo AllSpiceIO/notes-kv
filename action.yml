@@ -1,0 +1,19 @@
+name: "notes-kv"
+description: "Save key/value pairs to git notes"
+inputs:
+  values:
+    description:
+      "The key/value pairs to save, listed as <key>=<value>. Either this or the
+      values_file must be present."
+    required: false
+  values_file:
+    description:
+      "A JSON file of the key/value pairs. Either this or values must be
+      present."
+    required: false
+  custom_ref:
+    description: "The ref used to store the k/v notes. Defaults to notes-kv."
+    required: false
+runs:
+  using: "node20"
+  main: "dist/index.js"
